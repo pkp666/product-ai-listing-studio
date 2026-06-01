@@ -1,0 +1,216 @@
+{
+  "platform": "pdd",
+  "category": "箱包皮具/女包/男包 > 女包 > 手提包",
+  "category_short": "手提包",
+  "captured_at": "2026-05-01",
+  "sections": [
+    {
+      "name": "基本信息",
+      "fields": [
+        {
+          "name": "商品标题",
+          "type": "text",
+          "required": true,
+          "max_length": 60,
+          "note": "含核心词+卖点，关键词密度高，禁止：最/第一/唯一/极致及特殊符号",
+          "source": "stage3.pdd.title",
+          "user_fill": false
+        },
+        {
+          "name": "品牌",
+          "type": "text",
+          "required": false,
+          "source": "stage1.brand",
+          "user_fill": false
+        },
+        {
+          "name": "产地",
+          "type": "text",
+          "required": true,
+          "note": "填发货地省份，如：广东",
+          "source": "stage1.ship_from",
+          "user_fill": false
+        },
+        {
+          "name": "款式",
+          "type": "select",
+          "required": true,
+          "source": "stage3.pdd.attrs.风格",
+          "user_fill": true,
+          "options": [
+            "简约", "韩版", "欧美", "复古", "英伦", "日系",
+            "民族风", "潮流", "淑女", "通勤", "运动", "休闲"
+          ]
+        },
+        {
+          "name": "风格",
+          "type": "select",
+          "required": false,
+          "source": "stage3.pdd.attrs.风格",
+          "user_fill": true,
+          "options": [
+            "简约", "韩版", "欧美", "复古", "英伦", "日系",
+            "民族风", "潮流", "淑女", "通勤", "运动", "休闲"
+          ]
+        },
+        {
+          "name": "流行元素",
+          "type": "select",
+          "required": false,
+          "source": "stage3.pdd.attrs.流行元素",
+          "user_fill": true,
+          "options": [
+            "纯色", "印花", "撞色", "刺绣", "铆钉",
+            "流苏", "格纹", "拼接", "蝴蝶结", "链条"
+          ]
+        },
+        {
+          "name": "闭合方式",
+          "type": "select",
+          "required": false,
+          "source": "stage3.pdd.attrs.闭合方式",
+          "user_fill": true,
+          "options": [
+            "拉链", "磁扣", "搭扣", "按扣", "无扣", "抽绳", "锁扣"
+          ]
+        },
+        {
+          "name": "适用年龄",
+          "type": "select",
+          "required": false,
+          "source": "",
+          "user_fill": true,
+          "options": [
+            "18岁以下", "18-24岁", "25-34岁",
+            "35-44岁", "45-54岁", "55岁以上", "通用"
+          ]
+        },
+        {
+          "name": "面料材质",
+          "type": "select",
+          "required": true,
+          "note": "选择与产品实际材质最接近的选项",
+          "source": "stage1.material",
+          "user_fill": true,
+          "options": [
+            "头层牛皮", "二层牛皮", "羊皮", "猪皮",
+            "PU皮革", "PVC", "帆布", "尼龙", "涤纶",
+            "牛津布", "棉布", "草编", "金属", "混纺"
+          ]
+        },
+        {
+          "name": "内里材质",
+          "type": "select",
+          "required": false,
+          "source": "",
+          "user_fill": true,
+          "options": [
+            "涤纶", "棉布", "绒面", "PU", "尼龙", "无内里"
+          ]
+        },
+        {
+          "name": "包装方式",
+          "type": "select",
+          "required": false,
+          "source": "stage1.packaging",
+          "user_fill": false,
+          "options": ["单件", "套装", "礼盒", "袋装"]
+        },
+        {
+          "name": "商品货号",
+          "type": "text",
+          "required": false,
+          "note": "取第一个SKU货号",
+          "source": "stage1.sku_rows[0].sku_code",
+          "user_fill": false
+        },
+        {
+          "name": "搜索关键词",
+          "type": "text",
+          "required": false,
+          "max_length": 100,
+          "note": "逗号分隔，买家常用搜索词，覆盖长尾词",
+          "source": "stage3.pdd.keywords",
+          "user_fill": false
+        },
+        {
+          "name": "商品详情",
+          "type": "richtext",
+          "required": false,
+          "note": "详情页图文，200-400字，口语化，强调性价比",
+          "source": "stage3.pdd.description",
+          "user_fill": false
+        }
+      ]
+    },
+    {
+      "name": "规格与库存",
+      "note": "直接从stage1.sku_rows读取",
+      "fields": [
+        {
+          "name": "颜色规格",
+          "type": "sku_axis",
+          "required": false,
+          "source": "stage1.sku_rows[].color"
+        },
+        {
+          "name": "库存",
+          "type": "number",
+          "required": true,
+          "source": "stage1.sku_rows[].stock",
+          "default": 9999
+        },
+        {
+          "name": "拼单价",
+          "type": "number",
+          "required": true,
+          "source": "stage1.sku_rows[].price"
+        },
+        {
+          "name": "单买价",
+          "type": "number",
+          "required": true,
+          "source": "stage1.sku_rows[].price",
+          "note": "默认同拼单价，可单独修改"
+        },
+        {
+          "name": "规格编码",
+          "type": "text",
+          "required": false,
+          "source": "stage1.sku_rows[].sku_code"
+        }
+      ]
+    },
+    {
+      "name": "服务与承诺",
+      "fields": [
+        {
+          "name": "发货时效",
+          "type": "radio",
+          "required": true,
+          "source": "stage1.ship_time",
+          "user_fill": false,
+          "options": ["当日发货及晚点", "24小时发货及晚点", "48小时发货及晚点"],
+          "default": "48小时发货及晚点"
+        },
+        {
+          "name": "退货政策",
+          "type": "radio",
+          "required": false,
+          "source": "stage1.return_policy",
+          "user_fill": false,
+          "options": ["7天无理由退换", "不支持退换"],
+          "default": "7天无理由退换",
+          "note": "建议开启7天无理由退换，提升转化"
+        },
+        {
+          "name": "运费险",
+          "type": "checkbox",
+          "required": false,
+          "default": true,
+          "note": "建议开启，降低买家退货顾虑"
+        }
+      ]
+    }
+  ]
+}

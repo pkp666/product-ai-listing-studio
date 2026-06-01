@@ -1,0 +1,25 @@
+{
+  "name": "product-listing-video-template",
+  "version": "1.0.0",
+  "main": "index.js",
+"scripts": {
+  "dev": "remotion preview src/index.tsx",
+  "build": "remotion render src/index.tsx MyVideo final.mp4"
+},
+  "keywords": [
+    "remotion",
+    "product-video",
+    "ecommerce",
+    "ai-video",
+    "listing"
+  ],
+  "author": "",
+  "license": "MIT",
+  "description": "Remotion template for ecommerce product selling videos.",
+  "dependencies": {
+    "@remotion/cli": "^4.0.455",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "remotion": "^4.0.455"
+  }
+}

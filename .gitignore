@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.streamlit/secrets.toml
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Runtime data and generated media
+output/
+images/
+ima/
+banana_output/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.mp3
+*.wav
+*.jpg
+*.jpeg
+*.png
+*.webp
+video.json
+video1.json
+test_audio_single_object.json
+
+# Remotion / Node
+re/my-video/node_modules/
+re/my-video/.cache/
+re/my-video/.remotion/
+re/my-video/out/
+re/my-video/build/
+re/my-video/dist/
+re/my-video/public/*.mp4
+re/my-video/public/*.mp3
+re/my-video/public/*.jpg
+re/my-video/public/*.jpeg
+re/my-video/public/*.png
+re/my-video/public/*.webp
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
