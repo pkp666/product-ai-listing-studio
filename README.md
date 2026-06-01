@@ -1,31 +1,47 @@
 # product-ai-listing-studio
 
-AI product listing and cross-border commerce content studio.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/UI-Streamlit-ff4b4b.svg)](https://streamlit.io/)
+[![Remotion](https://img.shields.io/badge/Video-Remotion-111111.svg)](https://www.remotion.dev/)
 
-`product-ai-listing-studio` helps turn product photos and basic product facts into structured listing data, ecommerce copy, platform-specific fields, product images, and short selling-video assets. It is built around a staged workflow for sellers, operators, and creators who need to prepare product content for platforms such as Amazon, Shopify, TikTok Shop, Pinduoduo, and other marketplace-style channels.
+AI product listing and cross-border ecommerce content studio for turning product photos and basic product facts into marketplace-ready listing data, selling copy, AI-generated product visuals, and short video assets.
+
+`product-ai-listing-studio` is designed for ecommerce operators, cross-border sellers, marketplace agencies, and AI content builders who need a repeatable pipeline for Amazon, Shopify, TikTok Shop, Pinduoduo/PDD, and other product publishing workflows.
 
 ## Workflow
 
-The product flow follows six practical stages:
+![Product listing workflow](docs/assets/product-listing-workflow.jpg)
 
-1. **Basic information input**: upload real product photos and fill in product name, material, size, shipping origin, company, and price.
-2. **AI product detail enrichment**: analyze images and basic fields to generate selling points, titles, descriptions, specs, keywords, SEO tags, and target audience notes.
-3. **Platform field mapping**: adapt universal product data into marketplace-specific forms such as Amazon bullet points, Shopify rich descriptions, TikTok Shop short titles, or PDD category fields.
-4. **One-click content generation**: generate product copy, product main images, detail images, listing text, and scene-based product descriptions.
-5. **Selling-video generation**: create short video scripts and trigger video/image generation workflows for product promotion.
-6. **Listing data storage and publishing preparation**: save field data, generated assets, and listing drafts for browser-plugin or manual publishing workflows.
+The project follows a staged product-content pipeline:
+
+1. **Basic information input**: upload real product photos and fill product name, material, size, shipping origin, company, price, and other source fields.
+2. **AI product detail enrichment**: analyze product images and source fields to generate selling points, titles, descriptions, specs, keywords, SEO tags, and target-audience notes.
+3. **Platform field mapping**: adapt universal product data into marketplace-specific structures such as Amazon bullet points, Shopify rich descriptions, TikTok Shop short titles, and PDD category fields.
+4. **One-click content generation**: generate product copy, main images, detail images, listing text, and scene-based product descriptions.
+5. **Selling-video generation**: create short selling scripts and connect image/video generation workflows for product promotion assets.
+6. **Storage and publishing preparation**: keep fields, images, copy, and video materials ready for browser-plugin publishing or manual marketplace upload.
 
 ## Features
 
-- Streamlit UI for staged product listing work.
-- Product field schema, SKU matrix helpers, and export utilities.
-- AI-assisted product title, selling point, description, keyword, and SEO generation.
-- Vision analysis for uploaded product images.
-- Platform field mapping with example PDD category mapping data.
-- Coze workflow hooks for product main images, detail images, and selling-video generation.
-- Yunwu / GRS image and video generation wrappers.
+- Streamlit-based product listing workspace.
+- Product field schema, SKU matrix helpers, and listing persistence utilities.
+- AI-assisted product title, selling point, description, specification, keyword, and SEO generation.
+- Vision analysis for uploaded product photos.
+- Marketplace field mapping examples, including PDD category mapping data.
+- Coze workflow hooks for product main images, detail images, and selling videos.
+- Yunwu / GRS-style image and video generation wrappers.
 - Remotion template project for product video composition.
-- Local-first outputs: generated images, videos, and saved listing drafts stay out of Git by default.
+- Local-first output strategy: generated media, local drafts, and runtime data are ignored by Git by default.
+
+## Use Cases
+
+- Generate Amazon listing bullet points and SEO keywords from product images.
+- Create Shopify product descriptions and visual selling points.
+- Prepare TikTok Shop short titles, hooks, and product-video scripts.
+- Build PDD product fields from structured product data.
+- Turn product photos into main images, detail images, and short selling videos.
+- Prototype browser-plugin based marketplace publishing workflows.
 
 ## Repository Layout
 
@@ -43,6 +59,7 @@ coze_workflow.py        Generic Coze workflow driver
 cozedaihuo.py           Selling-video Coze workflow wrapper
 platform_maps/          Platform field mapping examples
 re/my-video/            Remotion product-video template
+docs/assets/            Public README assets
 ```
 
 ## Quick Start
@@ -55,7 +72,7 @@ Copy-Item .env.example .env
 streamlit run app.py
 ```
 
-For the Remotion template:
+For the Remotion video template:
 
 ```powershell
 cd re/my-video
@@ -82,11 +99,17 @@ COZE_WORKFLOW_VIDEO_ID=
 
 The open-source version intentionally does not include private API keys, Coze PATs, workflow IDs, image relay servers, generated images, videos, or local output data.
 
+## GitHub Topics
+
+Recommended repository topics:
+
+`ai-ecommerce`, `product-listing`, `cross-border-ecommerce`, `marketplace-automation`, `product-copywriting`, `image-generation`, `video-generation`, `streamlit`, `remotion`, `coze-workflow`, `tiktok-shop`, `shopify`, `amazon-listing`, `pdd`, `sku-generator`, `seo-keywords`
+
 ## Keywords
 
-AI ecommerce, product listing, cross-border ecommerce, marketplace automation, product copywriting, AI product description, product image generation, product video generation, listing optimizer, Amazon listing, Shopify product description, TikTok Shop, Pinduoduo, PDD listing, SKU generator, SEO keywords, product content pipeline, Coze workflow, Remotion video, Streamlit app.
+AI ecommerce, product listing, cross-border ecommerce, marketplace automation, product copywriting, AI product description, AI product photography, product image generation, product video generation, listing optimizer, Amazon listing, Shopify product description, TikTok Shop listing, Pinduoduo listing, PDD listing, SKU generator, SEO keywords, product content pipeline, Coze workflow, Remotion video, Streamlit app.
 
-中文关键词：AI电商、商品上架、跨境电商、商品文案、商品详情页、AI生成主图、AI生成详情图、带货视频、上架字段映射、SKU矩阵、Amazon Listing、Shopify商品描述、TikTok Shop、拼多多上架、SEO关键词、商品内容自动化。
+中文关键词：AI 电商、商品上架、跨境电商、商品文案、商品详情页、AI 生成主图、AI 生成详情图、带货视频、商品视频生成、上架字段映射、SKU 矩阵、Amazon Listing、Shopify 商品描述、TikTok Shop、拼多多上架、PDD 上架、SEO 关键词、商品内容自动化、浏览器插件一键上架。
 
 ## Security Notice
 

@@ -27,6 +27,11 @@ banana_output/
 *.jpeg
 *.png
 *.webp
+!docs/assets/
+!docs/assets/*.jpg
+!docs/assets/*.jpeg
+!docs/assets/*.png
+!docs/assets/*.webp
 video.json
 video1.json
 test_audio_single_object.json
